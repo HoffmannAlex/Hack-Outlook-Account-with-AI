@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Security](https://img.shields.io/badge/Security-Audit-red)
-![License](https://img.shields.io/badge/License-Educational%20Only-lightgrey)
+![License](https://img.shields.io/badge/License-Educational%20Only-lightgreen)
 
 ---
 
