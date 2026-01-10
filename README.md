@@ -36,7 +36,7 @@ The Outlook Account Password Security Analyzer is a practical cybersecurity hack
 - Raise awareness of credential security weaknesses.
 - Support ethical hacking and cybersecurity training.
 - Explore OAuth2 authentication vulnerabilities for learning purposes.
-- Works with AZUR accounts.
+- Works with AZURE accounts.
 
 ---
 
