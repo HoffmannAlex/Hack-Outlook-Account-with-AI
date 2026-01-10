@@ -27,7 +27,7 @@ By using this software, you acknowledge that unauthorized access to computer sys
 
 ## 🎯 Project Overview
 
-The Outlook Account Password Security Analyzer is a practical cybersecurity learning tool designed to illustrate how password weaknesses can be exploited. It is aimed at students, researchers, and security professionals who want to understand password attack simulations in a controlled and ethical environment.
+The Outlook Account Password Security Analyzer is a practical cybersecurity hacking tool designed to illustrate how password weaknesses can be exploited. It is aimed at students, researchers, and security professionals who want to understand password hacking in a controlled and ethical environment.
 
 ### 🎓 Educational Objectives
 
@@ -82,25 +82,39 @@ The Outlook Account Password Security Analyzer is a practical cybersecurity lear
 
 ### Step 1: Clone the Repository
 
+```bash
 git clone https://github.com/HoffmannAlex/Hack-Outlook-Account-with-AI.git  
 cd outlook-password-tool
+```
 
 ### Step 2: Install Dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
 ### Core Dependencies
 
-aiohttp>=3.8.0  
-requests>=2.28.0  
-cryptography>=3.4.0  
-stem>=1.8.0  
-psutil>=5.9.0  
-asyncio>=3.9.0  
+- aiohttp>=3.8.0  
+- requests>=2.28.0  
+- cryptography>=3.4.0  
+- stem>=1.8.0  
+- psutil>=5.9.0  
+- asyncio>=3.9.0  
 
-### Step 3: Confirm Setup
+### Step 3: Configure Azure AD Application
 
+1. Go to [Azure Portal](https://portal.azure.com)
+2. Create a new App Registration
+3. Note the Client ID and create a Client Secret
+4. Configure API permissions for Microsoft Graph
+5. Update `config.json` with your credentials
+
+### Step 4: Verify Installation
+
+```bash
 python hack_outlook.py --help
+```
 
 ---
 
@@ -108,19 +122,27 @@ python hack_outlook.py --help
 
 ### Standard Password Audit
 
+```bash
 python hack_outlook.py --email your_account@outlook.com --password-list passwords.txt
+```
 
 ### Anonymous Testing via Tor
 
+```bash
 python hack_outlook.py --email your_account@outlook.com --password-list passwords.txt --use-tor
+```
 
 ### High-Speed Multi-Thread Execution
 
+```bash
 python hack_outlook.py --email your_account@outlook.com --password-list passwords.txt --threads 4 --use-tor --min-delay 2 --max-delay 5
+```
 
 ### Proxy-Based Testing
 
+```bash
 python hack_outlook.py --email your_account@outlook.com --password-list passwords.txt --proxy-list proxies.txt --threads 3
+```
 
 ---
 
@@ -128,19 +150,71 @@ python hack_outlook.py --email your_account@outlook.com --password-list password
 
 ### 1. Dictionary-Based Auditing
 
+```bash
 python hack_outlook.py --email target@outlook.com --password-list common_passwords.txt  
 python hack_outlook.py --email target@outlook.com --password-list custom_list.txt  
+```
 
 ### 2. Mask-Based Password Generation
 
+```
 ?l?l?l?d?d?d   # Example: abc123  
 ?u?l?l?l?d?d   # Example: Abcd12  
 ?l?l?l?l?s?d   # Example: abcd!1  
+```
 
 ### 3. Rule and Combination Strategy
 
+```bash
 python hack_outlook.py --email target@outlook.com --strategy combination --base-words "password,outlook,user"
+```
 
 ### 4. Brute Force Simulation (Educational Use Only)
 
+```bash
 python hack_outlook.py --email target@outlook.com --strategy brute --min-length 4 --max-length 8
+```
+
+---
+
+## 📝 Configuration
+
+Edit `config.json` to set up your Azure AD application credentials:
+
+```json
+{
+    "azure_ad": {
+        "client_id": "your_client_id",
+        "client_secret": "your_client_secret",
+        "authority": "https://login.microsoftonline.com/common",
+        "scopes": ["https://graph.microsoft.com/.default"]
+    },
+    "app": {
+        "user_agent": "OutlookSecurityTester/1.0",
+        "timeout": 30,
+        "max_retries": 3
+    }
+}
+```
+
+---
+
+## ⚠️ Legal and Ethical Considerations
+
+This tool is provided for educational and authorized security testing purposes only. The developers assume no liability and are not responsible for any misuse or damage caused by this program. It is the end user's responsibility to obey all applicable local, state, and federal laws. 
+
+**IMPORTANT**: Only test accounts you own or have explicit permission to test. Unauthorized access to computer systems is illegal in most jurisdictions.
+
+---
+
+## 📜 License
+
+This project is licensed under the Educational Community License v2.0 (ECL-2.0). See the LICENSE file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- Microsoft Graph API Team
+- Open Source Security Community
+- Educational Institutions promoting responsible security research
