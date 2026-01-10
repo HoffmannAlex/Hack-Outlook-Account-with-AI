@@ -1,4 +1,4 @@
-# Outlook Account Password Security Analyzer | Educational Purposes Only
+# Outlook Account Password Security Hacker 2026 | Educational Purposes Only
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Security](https://img.shields.io/badge/Security-Audit-red)
